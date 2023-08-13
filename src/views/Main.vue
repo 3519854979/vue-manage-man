@@ -1,23 +1,37 @@
 <template>
-  <div>
-    <h1>main</h1>
-    <el-container>
-      <el-aside width="200px">Aside</el-aside>
-      <el-container>
-        <el-header>Header</el-header>
-        <el-main>Main</el-main>
-      </el-container>
-    </el-container>
-    <router-view></router-view>
-  </div>
+    <div>
+        <el-container>
+            <el-aside width="auto">
+                <common-aside></common-aside>
+            </el-aside>
+            <el-container>
+                <el-header>
+                    <common-header></common-header>
+                </el-header>
+                <el-main>
+                    <router-view></router-view>
+                </el-main>
+            </el-container>
+        </el-container>
+    </div>
+
 </template>
 
 <script>
+import CommonAside from "@/components/CommonAside";
+import CommonHeader from "@/components/CommonHeader";
+
 export default {
-  name: "Main"
+    name: "Main",
+    components: {
+        CommonAside,
+        CommonHeader,
+    }
 }
 </script>
 
 <style scoped>
-
+.el-header {
+    padding: 0px;
+}
 </style>
